@@ -6,10 +6,11 @@ route = Blueprint('cbert', __name__)
 @route.route('/train', methods=["POST"])
 def train():
     data = request.get_json()
-    if 'docs' in data and 'index_name' in data:
+    if 'docs' in data and 'index_name' in data and 'meta_datas' in data:
         docs = data['docs']
         index_name = data['index_name']
-        success = cbert.train(docs, index_name)
+        meta_datas = data['meta_datas']
+        success = cbert.train(docs, index_name, meta_datas)
         return jsonify({"success": success})
     else:
         return abort(400)
