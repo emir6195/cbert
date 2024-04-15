@@ -15,14 +15,17 @@ class CBERT:
                 self.RAG.index(
                     index_name=index_name,
                     collection=docs,
-                    document_metadatas=meta_datas
+                    document_metadatas=meta_datas,
+                    max_document_length=512,
+                    split_documents=True
                 )
                 return True
             else:
                 self.RAG.add_to_index(
                     index_name=index_name,
                     new_collection=docs,
-                    new_document_metadatas=meta_datas
+                    new_document_metadatas=meta_datas,
+                    split_documents=True,
                 )
         except Exception as e:
             print(e)
