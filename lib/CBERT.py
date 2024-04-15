@@ -15,7 +15,6 @@ class CBERT:
                     index_name=index_name,
                     collection=docs,
                     document_metadatas=meta_datas,
-                    split_documents=True
                 )
                 return True
             else:
@@ -23,7 +22,6 @@ class CBERT:
                     index_name=index_name,
                     new_collection=docs,
                     new_document_metadatas=meta_datas,
-                    split_documents=True
                 )
         except Exception as e:
             print(e)
