@@ -19,7 +19,7 @@ class CBERT:
                 self.RAG.add_to_index(
                     index_name=index_name,
                     new_collection=docs,
-                    document_metadatas=meta_datas
+                    new_document_metadatas=meta_datas
                 )
         except Exception as e:
             print(e)
