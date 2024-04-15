@@ -30,9 +30,9 @@ class CBERT:
 
     def invoke(self, index_name: str, query: str):
         try:
-            return self.RAG.search(
+            model = self.RAG.from_index(".ragatouille/colbert/indexes/"+index_name)
+            return model.search(
                 query=query,
-                index_name=index_name,
                 k=4
             )
         except Exception as e:
