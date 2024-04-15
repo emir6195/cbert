@@ -42,7 +42,6 @@ class CBERT:
             else:
                 self.cached_indexes[index_name].search(
                     query=query,
-                    index_name=index_name,
                     k=4
                 )
         except Exception as e:
