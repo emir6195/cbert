@@ -31,19 +31,19 @@ class CBERT:
 
     def invoke(self, index_name: str, query: str):
         try:
-            if (index_name not in self.cached_indexes):
-                model = self.RAG.from_index(
-                    ".ragatouille/colbert/indexes/"+index_name)
-                self.cached_indexes[index_name] = model
-                return model.search(
-                    query=query,
-                    k=4
-                )
-            else:
-                self.cached_indexes[index_name].search(
-                    query=query,
-                    k=4
-                )
+            # if (index_name not in self.cached_indexes):
+            model = self.RAG.from_index(
+                ".ragatouille/colbert/indexes/"+index_name)
+            self.cached_indexes[index_name] = model
+            return model.search(
+                query=query,
+                k=4
+            )
+            # else:
+            #     self.cached_indexes[index_name].search(
+            #         query=query,
+            #         k=4
+            #     )
         except Exception as e:
             print(e)
             return False
