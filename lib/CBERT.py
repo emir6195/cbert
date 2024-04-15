@@ -1,6 +1,6 @@
 
 from ragatouille import RAGPretrainedModel
-
+import faiss
 
 class CBERT:
     def __init__(self) -> None:
