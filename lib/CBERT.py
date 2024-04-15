@@ -4,7 +4,7 @@ from ragatouille import RAGPretrainedModel
 
 class CBERT:
     def __init__(self) -> None:
-        self.RAG = RAGPretrainedModel.from_pretrained("colbert-ir/colbertv2.0")
+        self.RAG = RAGPretrainedModel.from_pretrained("colbert-ir/colbertv2.0", n_gpu=0)
 
     def train(self, docs: list[str], index_name: str, meta_datas: list[dict], overwrite_index=True) -> bool:
         try:
