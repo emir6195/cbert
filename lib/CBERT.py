@@ -8,6 +8,9 @@ class CBERT:
 
     def train(self, docs: list[str], index_name: str, meta_datas: list[dict], overwrite_index=True) -> bool:
         try:
+            print("index_name =>", index_name)
+            print("docs =>", len(docs))
+            print("overwrite_index =>", overwrite_index)
             if overwrite_index:
                 self.RAG.index(
                     index_name=index_name,
