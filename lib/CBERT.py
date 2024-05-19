@@ -17,6 +17,8 @@ class CBERT:
                     index_name=index_name,
                     collection=docs,
                     document_metadatas=meta_datas,
+                    max_document_length=512,
+                    split_documents=True
                 )
                 return True
             else:
@@ -37,7 +39,7 @@ class CBERT:
             self.cached_indexes[index_name] = model
             return model.search(
                 query=query,
-                k=4
+                k=8
             )
             # else:
             #     self.cached_indexes[index_name].search(
